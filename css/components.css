@@ -2,6 +2,15 @@
 .main{margin-left:260px;min-height:100vh;position:relative;z-index:1}
 .content{padding:2.5rem 2.5rem 4rem;max-width:820px}
 
+#ch-landing .content {
+  padding: 0;
+}
+
+#ch-landing {
+  margin: 0;
+  padding: 0;
+}
+
 @media(max-width:768px){
   .main{margin-left:0}
   .content{padding:1rem 1.25rem 3rem}
@@ -22,7 +31,7 @@
 /* ── HERO LANDING ── */
 .hero-landing{
   min-height:100vh;display:flex;flex-direction:column;
-  align-items:flex-start;justify-content:center;
+  align-items:flex-start;justify-content:flex-start;padding-top:6rem;
   padding:3rem 2.5rem 4rem;position:relative;
 }
 .hero-landing .big-title{
