@@ -169,14 +169,44 @@ function updateProgress() {
 }
 
 // ─────────────────────────────────────────
+// MOBILE SETUP
+// ─────────────────────────────────────────
+function handleResize() {
+  const toggle = document.getElementById('mobileToggle');
+  const sidebar = document.getElementById('sidebar');
+  const main = document.querySelector('.main');
+
+  if (window.innerWidth <= 768) {
+    // mobile
+    toggle.style.display = 'flex';
+    main.style.marginLeft = '0';
+    if (!sidebar.classList.contains('open')) {
+      sidebar.style.transform = 'translateX(-100%)';
+    }
+  } else {
+    // desktop
+    toggle.style.display = 'none';
+    main.style.marginLeft = '260px';
+    sidebar.style.transform = 'translateX(0)';
+    document.getElementById('sidebarOverlay').classList.remove('visible');
+  }
+}
+
+// ─────────────────────────────────────────
 // SIDEBAR
 // ─────────────────────────────────────────
 function toggleSidebar() {
-  document.getElementById('sidebar').classList.toggle('open');
-  document.getElementById('sidebarOverlay').classList.toggle('visible');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+  const isOpen = sidebar.classList.toggle('open');
+  sidebar.style.transform = isOpen ? 'translateX(0)' : 'translateX(-100%)';
+  overlay.classList.toggle('visible', isOpen);
 }
+
 function closeSidebar() {
-  document.getElementById('sidebar').classList.remove('open');
+  const sidebar = document.getElementById('sidebar');
+  sidebar.classList.remove('open');
+  sidebar.style.transform = 'translateX(-100%)';
   document.getElementById('sidebarOverlay').classList.remove('visible');
 }
 
@@ -185,3 +215,5 @@ function closeSidebar() {
 // ─────────────────────────────────────────
 buildNav();
 buildChapters();
+handleResize();
+window.addEventListener('resize', handleResize);
