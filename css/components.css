@@ -2,6 +2,17 @@
 .main{margin-left:260px;min-height:100vh;position:relative;z-index:1}
 .content{padding:2.5rem 2.5rem 4rem;max-width:820px}
 
+@media(max-width:768px){
+  .main{margin-left:0 !important}
+  .content{padding:1rem 1rem 3rem}
+  .chapter-title{font-size:24px}
+  .topbar{padding:0.75rem 1rem 0.75rem 56px}
+  .two-col{grid-template-columns:1fr}
+  .code-block{font-size:11px;padding:0.75rem}
+  .completion-card{flex-wrap:wrap}
+  .cc-btn{width:100%;text-align:center}
+}
+
 /* ── CHAPTER ── */
 .chapter{display:none;animation:slideIn 0.25s ease}
 .chapter.active{display:block}
