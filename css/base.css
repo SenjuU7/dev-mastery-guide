@@ -24,12 +24,9 @@
 
 html{scroll-behavior:smooth}
 body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:var(--sans);
-  line-height:1.7;
-  min-height:100vh;
-  overflow-x:hidden;
+  background:var(--bg);color:var(--text);
+  font-family:var(--sans);line-height:1.7;
+  min-height:100vh;overflow-x:hidden;
 }
 
 body::before{
@@ -44,35 +41,10 @@ body::before{
 .orb3{width:350px;height:350px;background:radial-gradient(circle,rgba(0,229,204,0.1),transparent 70%);top:50%;left:40%}
 
 code{
-  font-family:var(--mono);
-  font-size:12px;
-  background:rgba(124,111,255,0.12);
-  color:var(--accent);
-  padding:1px 6px;
-  border-radius:4px;
+  font-family:var(--mono);font-size:12px;
+  background:rgba(124,111,255,0.12);color:var(--accent);
+  padding:1px 6px;border-radius:4px;
 }
 
 @keyframes slideIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 @keyframes popIn{from{transform:scale(0.92);opacity:0}to{transform:scale(1);opacity:1}}
-
-@media(max-width:768px){
-  .sidebar{
-    transform:translateX(-100%);
-    width:75%;
-    max-width:260px;
-    z-index:200;
-  }
-  .sidebar.open{transform:translateX(0)}
-  .mobile-toggle{display:flex}
-  .hero-landing{padding:5rem 1.5rem 3rem}
-  .hero-landing .big-title{font-size:clamp(40px,13vw,64px)}
-}
-
-/* ── SIDEBAR OVERLAY ── */
-.sidebar-overlay{
-  display:none;
-  position:fixed;inset:0;
-  background:rgba(0,0,0,0.6);
-  z-index:150;
-}
-.sidebar-overlay.visible{display:block}
