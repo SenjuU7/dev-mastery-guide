@@ -1,0 +1,66 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#0a0a0f;
+  --bg2:#111118;
+  --bg3:#1a1a24;
+  --bg4:#22222f;
+  --text:#f0eeff;
+  --text2:#9d9ab8;
+  --text3:#5a5870;
+  --accent:#7c6fff;
+  --accent2:#ff6b9d;
+  --accent3:#00e5cc;
+  --green:#00e5a0;
+  --amber:#ffb547;
+  --border:rgba(124,111,255,0.15);
+  --border2:rgba(124,111,255,0.3);
+  --mono:'DM Mono',monospace;
+  --sans:'Manrope',sans-serif;
+  --display:'Syne',sans-serif;
+  --radius:12px;
+  --radius-sm:7px;
+}
+
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  line-height:1.7;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:0;opacity:0.6;
+}
+
+.orb{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0}
+.orb1{width:500px;height:500px;background:radial-gradient(circle,rgba(124,111,255,0.18),transparent 70%);top:-100px;left:-100px}
+.orb2{width:400px;height:400px;background:radial-gradient(circle,rgba(255,107,157,0.12),transparent 70%);bottom:10%;right:-80px}
+.orb3{width:350px;height:350px;background:radial-gradient(circle,rgba(0,229,204,0.1),transparent 70%);top:50%;left:40%}
+
+code{
+  font-family:var(--mono);
+  font-size:12px;
+  background:rgba(124,111,255,0.12);
+  color:var(--accent);
+  padding:1px 6px;
+  border-radius:4px;
+}
+
+@keyframes slideIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes popIn{from{transform:scale(0.92);opacity:0}to{transform:scale(1);opacity:1}}
+
+@media(max-width:768px){
+  .sidebar{transform:translateX(-100%)}
+  .sidebar.open{transform:translateX(0)}
+  .main{margin-left:0}
+  .mobile-toggle{display:flex}
+  .content{padding:1.5rem 1.25rem 3rem}
+  .chapter-title{font-size:26px}
+  .topbar{padding:0.75rem 1rem}
+}

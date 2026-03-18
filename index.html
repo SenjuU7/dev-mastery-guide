@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dev Mastery Guide — Pandas, PostgreSQL & Rust</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/sidebar.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+<!-- background effects -->
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+
+<!-- mobile sidebar toggle -->
+<button class="mobile-toggle" onclick="toggleSidebar()">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- ── SIDEBAR ── -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="logo">Dev Mastery</div>
+    <div class="logo-sub">Pandas · PostgreSQL · Rust</div>
+  </div>
+
+  <div class="nav-list">
+    <div class="sidebar-section">🐼 Pandas</div>
+    <div id="pandasNav"></div>
+    <div class="sidebar-section">🐘 PostgreSQL</div>
+    <div id="sqlNav"></div>
+    <div class="sidebar-section">🦀 Rust</div>
+    <div id="rustNav"></div>
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="progress-info" id="progressInfo">0 / 28 selesai</div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill" style="width:0%"></div>
+    </div>
+  </div>
+</aside>
+
+<!-- ── MAIN ── -->
+<div class="main">
+  <div class="topbar">
+    <div class="topbar-left">
+      <span class="chapter-badge" id="topBadge">Pandas</span>
+      <span class="topbar-title" id="topTitle">Selamat Datang</span>
+    </div>
+    <div class="topbar-right">
+      <button class="topbar-btn" onclick="prevChapter()" id="btnPrev" disabled>← Prev</button>
+      <button class="topbar-btn primary" onclick="nextChapter()" id="btnNext">Mulai →</button>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- LANDING PAGE -->
+    <div class="chapter active" id="ch-landing">
+      <div class="hero-landing">
+        <div class="pill-row">
+          <span class="pill p">11 Bab Pandas</span>
+          <span class="pill s">8 Bab PostgreSQL</span>
+          <span class="pill" style="border-color:rgba(255,110,50,0.35);color:#ff8c50">9 Bab Rust</span>
+          <span class="pill">Pemula → Advanced</span>
+        </div>
+        <div class="big-title">
+          <span class="grad1">Dev</span><br>
+          <span class="grad2">Mastery</span><br>
+          <span class="grad3">Guide</span>
+        </div>
+        <p>Kuasai Pandas, PostgreSQL, dan Rust — dari data analysis hingga systems programming. Setiap bab dilengkapi konsep mendalam, contoh nyata, dan latihan.</p>
+        <button class="hero-start-btn" onclick="goChapter(0)">Mulai Belajar →</button>
+      </div>
+    </div>
+
+    <!-- chapters injected by JS -->
+    <div id="chaptersContainer"></div>
+
+  </div>
+</div>
+
+<!-- data files — order matters! -->
+<script src="data/pandas.js"></script>
+<script src="data/postgresql.js"></script>
+<script src="data/rust.js"></script>
+
+<!-- main app logic -->
+<script src="js/app.js"></script>
+
+</body>
+</html>
