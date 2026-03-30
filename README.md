@@ -11,7 +11,8 @@
 
 ## 🖥️ Demo
 
-Cukup buka file `data_mastery_guide.html` di browser — tidak perlu server, tidak perlu install apapun.
+Cukup buka `https://dev-mastery-guide.vercel.app/` di browser.
+### TIDAK PERLU DI CLONE
 
 ---
 
